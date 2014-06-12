@@ -13,7 +13,16 @@
         //$(".a:first").css("border","3px solid red");
         //$(".b:even").css("border","3px solid red");
         //$("p:gt(1)").css("border","3px solid red");
-        $("p:not(p:eq(2))").css("border","3px solid red");
+        //$("p:not(p:eq(2))").css("border","3px solid red");
+        //$("p[class]").css("border","3px solid red");
+        //$("p[id=para1]").css("border","3px solid red");
+        //$("p[id^=para]").css("border","3px solid red");
+        //$("p[id^=para][lang*=en-]").css("border","3px solid red");
+        //$("li:contains(3)").css("border","3px solid red");
+        //$("p:parent").css("border","3px solid red");
+        //$("ul:has(li[class=a])").css("border","3px solid red");
+        //$("ul li:nth-child(3)").css("border","3px solid red");
+        $("ul li:last-child").css("border","3px solid red");
     });
     </script>
     
@@ -33,7 +42,7 @@
     <p class="a">This is a paragraph 1</p>
         <p id="para1">This is a paragraph 2</p>
         <p class="b">This is a paragraph 3</p>
-        <p id="para4">This is a paragraph 4</p>
+        <p id="para4" lang="en-us">This is a paragraph 4</p>
         
     </body>
     </html>

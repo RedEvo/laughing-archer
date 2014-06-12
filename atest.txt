@@ -1,3 +1,0 @@
-This is a simple file used to upload to Github while I practice.
-This is a new line of text.
-I've now edited this in Github.
