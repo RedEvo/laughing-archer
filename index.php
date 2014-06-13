@@ -32,9 +32,7 @@
         </style>
     </head>
     <body>
-    <?php
-phpinfo();
-?>
+    
         
     <ul id="list1">
         <li class="a">item 1</li>
@@ -46,6 +44,8 @@ phpinfo();
         <p id="para1">This is a paragraph 2</p>
         <p class="b">This is a paragraph 3</p>
         <p id="para4" lang="en-us">This is a paragraph 4</p>
-        
+    <?php
+phpinfo();
+?>    
     </body>
     </html>
