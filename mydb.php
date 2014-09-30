@@ -1,5 +1,7 @@
 <?php
-$q = $_GET['q'];
+
+$t = $_GET['t'];
+$p = $_GET['p'];
 
 $con = mysqli_connect('localhost','root','root','core');
 if (!$con) {
@@ -7,8 +9,8 @@ if (!$con) {
 }
 
 mysqli_select_db($con,"ajax_demo");
-$sql = 'SELECT System, SystemName from tbl_' . $q . ' where AssessmentCurrent="Medium" and Assignation="Life"';
-//echo $sql;
+$sql = 'SELECT System, SystemName from tbl_' . $t . ' where Assessment' . $p . ' ="Medium" and Assignation="Life"';
+echo $sql;
 $result = mysqli_query($con,$sql);
 
 echo "<table border='1'>
@@ -26,4 +28,5 @@ while($row = mysqli_fetch_array($result)) {
 echo "</table>";
 
 mysqli_close($con);
+
 ?>

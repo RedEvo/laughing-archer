@@ -1,11 +1,21 @@
 <html>
 <head>
 <script>
-function showUser(str) {
-  if (str=="") {
+function getBothValues()
+    {
+        $strType = document.getElementById("Type").value;
+        $strPeriod = document.getElementById("Period").value;
+        //alert ($strType);
+        //alert ($strPeriod);
+        showData ($strType, $strPeriod);
+    }
+function showData(str1,str2) {
+  //alert (str1);
+    if (str1=="") {
     document.getElementById("txtHint").innerHTML="";
     return;
-  }
+  } 
+
   if (window.XMLHttpRequest) {
     // code for IE7+, Firefox, Chrome, Opera, Safari
     xmlhttp=new XMLHttpRequest();
@@ -17,15 +27,16 @@ function showUser(str) {
       document.getElementById("txtHint").innerHTML=xmlhttp.responseText;
     }
   }
-  xmlhttp.open("GET","mydb.php?q="+str,true);
+  xmlhttp.open("GET","mydb.php?t="+str1+"&p="+str2,true);
+  //xmlhttp.open("GET","mydb.php?t="+str1,true);
   xmlhttp.send();
 }
 </script>
 </head>
 <body>
 <p>Life Systems</p>
-<form>
-<select name="users" onchange="showUser(this.value)">
+<form name="type">
+<select name="Type" id="Type" onchange="getBothValues()">
 <option value="">Select a report type:</option>
 <option value="Impact">Impact</option>
 <option value="Risk">Risk</option>
@@ -33,8 +44,14 @@ function showUser(str) {
 <option value="Obsolescence">Obsolescence</option>
 </select>
 </form>
-<br>
-<div id="txtHint"><b>Report info will be shown here.</b></div>
-
+<form name="period">
+<select name="Period" id="Period" onchange="getBothValues()">
+<option value="Current" selected>Current</option>
+<option value="Plus1">Plus 1 yr</option>
+<option value="Plus3">Plus 3 yrs</option>
+<option value="Plus5">Plus 5 yrs</option>
+</select>
+</form>
+<div id="txtHint"><b>Data will be listed here.</b></div>
 </body>
 </html> 
