@@ -7,7 +7,7 @@
 
 <head>
 	<meta charset="utf-8" />
-	<title>Improved - AHAH Example</title>
+	<title>Improved - AHAH Example - DAR</title>
 	<link href="../../petal/css/all.css" rel="stylesheet" type="text/css" media="all" />
 	<link href="../../petal/css/improved.css" rel="stylesheet" type="text/css" media="all" />
 	<link href="../../petal/css/jqwd.css" rel="stylesheet" type="text/css" media="all" />
@@ -317,14 +317,46 @@ var $flowers = $('#flower-items');
 
 $('#flower-items').find('a').on('click', function(e){
 	e.preventDefault();
+	var $desc = $('#flower-description');
+	switch($(this).attr('href'))
+	{
+		case 'calla.html':
+		$desc.load('fragments/lilies.html');
+		break;
+		case 'sunflowers.html':
+		$desc.load('fragments/sunflower.html');
+		break;
+		case 'iris.html':
+		$desc.load('fragments/irises.html');
+		break;
+		case 'alstromeria.html':
+		$desc.load('fragments/peruvian.html');
+		break;
+			
+	}
 
-	$('flower-description').load('fragments/lilies.html');
+	//$('#flower-description').load('fragments/lilies.html');
 });
 
 
 });
 </script>
-
+<div align='center'>
+<h1>My New Movie Stuff</h1>
+<form action='' id='movie-lookup'>
+	<div>
+		<label for='movie-name'>Please type the name of the film you want to know about:</label>
+		<input type='text' id='movie-name' name='movie' required />
+		<input type='submit' id='btn-find' value='find my film details' />
+		
+	
+	</div>
+</form>
+<div id='movie-results'>
+	<em>Movie results here</em>
+</div>
+</div>
+<p>The End Of My New Movie Stuff</p>
 </body>
 
 </html>
