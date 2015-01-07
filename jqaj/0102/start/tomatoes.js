@@ -17,7 +17,7 @@ $(document).ready(function(){
             
             var requestURL = 'http://api.rottentomatoes.com/api/public/v1.0/movies.json?apikey=' + apiKey + '&q='
              + movie + '&page_limit=1&callback=?';
-             document.write(requestURL);
+             //document.write(requestURL);
  
  //Grab the data
  //$results.html('Your movie data for search - ' + movie);
